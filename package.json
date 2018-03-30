@@ -1,0 +1,24 @@
+{
+  "name": "gambler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "^4.16.3",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "nodemon": "^1.17.2",
+    "npm": "^5.8.0",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Duffy (github@benjduff)",
+  "license": "ISC"
+}
