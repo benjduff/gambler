@@ -30,7 +30,6 @@ const port = 3000;
 //CORS middleware
 app.use(cors());
 
-
 //set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 

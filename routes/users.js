@@ -25,10 +25,13 @@ router.post('/register', (req, res, next) => {
 
 //authenticate
 router.post('/auth', (req, res, next) => {
+    console.log(req.body.username);
     const username = req.body.username;
     const password = req.body.password;
 
     User.getUserByUsername(username, (err, user)  => { 
+        console.log(user);
+        
         if(err) throw err;
         if(!user){ //if no user returned send response to client
             return res.json({success: false, msg:'User not found'});
@@ -63,6 +66,11 @@ router.post('/auth', (req, res, next) => {
 router.get('/gamble', passport.authenticate('jwt', {session:false}), (req, res, next) => {
     res.json({user: req.user});
 });
+
+// Profile
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+    res.json({user: req.user});
+  });
 
 
 module.exports = router;

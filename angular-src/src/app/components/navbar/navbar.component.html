@@ -2,7 +2,10 @@
     <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <a class="p-2 text-dark" [routerLink]="['/']">Home</a>
-      <a class="p-2 text-dark" [routerLink]="['/login']">Login</a>
+      <a class="p-2 text-dark" *ngIf="!authService.loggedIn()" [routerLink]="['/register']">Sign up</a>
+      <a class="p-2 text-dark" *ngIf="authService.loggedIn()" [routerLink]="['/gamble']">Gamble</a>
+      <a class="p-2 text-dark" *ngIf="authService.loggedIn()" [routerLink]="['/profile']">Profile</a>
     </nav>
-    <a class="btn btn-outline-primary" [routerLink]="['/register']">Sign up</a>
+    <a class="btn btn-outline-primary" *ngIf="!authService.loggedIn()" [routerLink]="['/login']">Login</a>
+    <a class="btn btn-outline-primary" *ngIf="authService.loggedIn()" (click)="onLogoutClick()" href="#" >Logout</a>
   </div>
